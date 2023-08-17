@@ -1,0 +1,30 @@
+@import '../../../styles.scss';
+
+body {
+    //background-color: #334155;
+    background-color: #3b444b;
+    height: calc(100% + 100vh);
+}
+
+.nav {
+    display: block;
+}
+
+main {
+    @include container(98%, 1%);
+    display: flex;
+    position: relative;
+    .holder{
+        position: fixed;
+        width: 20%;
+    }
+    section.display-route {
+        padding: 20px 0px 0px 0px;
+        width: 90%;
+        margin-left: 20%;
+        z-index: 5;
+        //background-color: #334155;
+        //background-color: lightpink;
+        background-color:  #dac9cff7;;
+    }
+}

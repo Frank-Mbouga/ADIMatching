@@ -1,0 +1,553 @@
+@import '../../../styles.scss';
+main{
+    
+    section.user-profile-and-chat-pannel{
+        @include display-element-flex(center,space-between);
+        width: 70%;
+        section.chat-pannel{
+            background-color: white;
+            // padding: 0px 0px 40px 0px;
+            // margin-left: 1%;
+            // width: %;
+           @include container(95%,2.5%);
+           margin-right: 2.5%;
+            
+            &.view{
+               @include container(56%,2%);
+            }
+            header{
+                .current-chat{
+                    @include display-element-flex(center,space-between);
+                    @include container(98%,1%);
+                    padding:10px 0px 10px 0px;
+                    border-bottom: 1px solid rgba(56, 52, 52, 0.178);
+                    div.user-profile{
+                        @include display-element-flex(center,null); 
+                        gap: 10px;
+                        cursor: pointer;
+                        div.display-photo{
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 50%;
+                            }
+                        }
+                        p.username{
+                            font-family: $font-family;
+                            font-weight: 500;
+                            color: black;
+                        }
+                        p.online-flag{
+                            width: 10px;
+                            height: 10px;
+                            background-color: green;
+                            border-radius: 50%;
+                        }
+                    }
+                    div.likes-notification{
+                        button{
+                            @include input-button-style;
+                            background-color: transparent;
+                            margin-right: 10px;
+                            i{
+                                font-size: 20px;
+                                color: rgba(0, 0, 0, 0.342);
+                            }
+                        }
+                    }
+                }
+            }
+            div.chat-box{
+                .old-chat{
+                    position: relative;
+                    .yesterday{
+                        @include yester-today;
+                    }
+                    div.hand-cursor{
+                        // opacity: 0;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        position: relative;
+                        right:100% ;
+                        
+                        animation-name: cursor-pointer;
+                        animation-duration: 1.5s;
+                        animation-delay: 0.5s;
+                        animation-timing-function: ease-in;
+                        animation-iteration-count: 4;
+
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 50%;
+                        }
+                    }
+                    .receiver{
+                        margin: 20px 0px 0px 0px;
+                        .dp-and-message{
+                            @include display-element-flex(flex-start,null);
+                            flex-direction: column;
+                            .dp{
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 50%;
+                                img{
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+                    }
+                    .sender{
+                        @extend .receiver;
+              
+                        float: right;
+                        .dp-and-message{
+                            @include display-element-flex(flex-end,null);
+                            div.double-messages{
+                                p.message{
+                                    background-color: $blue-color;
+                                }
+                            }
+                        }
+                    }
+                }
+                div.todays-chat{
+                    @extend .old-chat;
+                    .today{
+                        @include yester-today;
+                    }
+                }
+                .writer{
+                    border-top: 1px solid rgba(0, 0, 0, 0.342);;
+                    margin-top: 100px;
+                    padding-top: 25px;
+                    button.send{
+                        @include input-button-style;
+                        background-color: $blue-color;
+                        color: white;
+                        font-size: 15px;
+                        padding: 5px;
+                        margin-left: 5px;
+                        transform: rotate(45deg);
+                        border-radius: 50%;
+                    }
+                    @include display-element-flex(center,null);
+                    .message-tools{
+                        @include display-element-flex(center,space-between);
+                        @include container(78%,2%);
+                        div.vm{
+                            width: 80%;
+                            @include display-element-flex(center,null);
+                            button.voicemail{
+                                @include input-button-style;
+                                background-color: transparent;
+                                font-size: 20px;
+                                color: rgba(27, 20, 20, 0.644);
+                            }
+                            textarea{
+                                background-color: whitesmoke;
+                                height: 40px;
+                                padding: 8px 0px 0px 10px;
+                                border-radius: 30px;
+                                @include input-button-style;
+                                width: 100%;
+                                resize: none;
+                                margin-left: 3px;
+                                // @include container(90%, 2%);
+                                font-size: 16px;
+                                font-family: $font-family;
+                                color:rgba(0, 0, 0, 0.363);
+                                &::placeholder{
+                                    
+                                    color:rgba(0, 0, 0, 0.349);
+                                }
+                                
+                            }
+                        }
+                        .camera-emoji-doc{
+                               
+                            button{
+                                @include input-button-style;
+                                background-color: transparent!important;
+                                i{
+                                    padding-right: 5px;
+                                    font-size: 16px;
+                                    color:rgba(27, 20, 20, 0.644)!important;
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }   
+        }
+    }
+}
+
+//
+main{
+    @include display-element-flex(center,space-between);
+    section.chat-ui{
+        background-color: $ui-background;
+    }
+   
+    section.available-chat, section.available-chat-mobile{
+        width: 30%;
+        // background-color: red;
+        margin-top: -90px;
+        // position: relative;
+        // top: 1%;
+        header{
+            div.queried-profile{
+                @include container(90%,5%);
+                background-color: $ui-background;
+                @include display-element-flex(null, space-between);
+                div.searched-profile{
+                    @include display-element-flex(center,null);
+                    gap: 30px;
+                    div.display-photo{
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 50%;
+                        }
+                    }
+                    div.username-and-description{
+                        .username{
+                            color: $blue-color;
+                            font-family: $font-family;
+                            font-weight: 400;
+                        }
+                        p.user-description{
+                            @extend .username;
+                            color:$black;
+                        }
+                    }
+                }
+                span.edit{
+                    padding-right: 5px;
+                    i{
+                        color: rgba(0, 0, 0, 0.342);
+                    }
+                }
+            }
+            div.query-profile{
+                @include container(90%,5%);
+                background-color: white;
+                border-radius: 20px;
+                padding: 10px;
+                margin-top: 10px;
+                span{
+                    margin-left: 2px;
+                    i{
+                        color:rgba(0, 0, 0, 0.199)
+                    }
+                }
+                input[type="search"]{
+                    background-color: transparent;
+                    @include input-button-style;
+                    @include container(80%, 2%);
+                    font-size: 16px;
+                    font-family: $font-family;
+                    color:rgba(0, 0, 0, 0.363);
+                    &::placeholder{
+                        
+                        color:rgba(0, 0, 0, 0.349);
+                    }
+                    
+                }
+            }
+        }
+
+        div.available-chats{
+            div.chat{
+                @include display-element-flex(center,null);
+                @include container(95%,2.5%);
+                padding-top: 10px;
+                div.chat-profile,div.chat-profile-mobile{
+                    @include display-element-flex(center,null);
+                    gap: 15px;
+                    width: 80%;
+                    div.display-photo{
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 50%;
+                        }
+                    }
+                    div.username-and-last-message{
+                        .username{
+                            color: $blue-color;
+                            font-family: $font-family;
+                            font-weight: 400;
+                            font-size: 20px;
+                        }
+                        p.last-message{
+                            @extend .username;
+                            color:$black;
+                            font-size: 14px;
+                        }
+                    }
+                }
+                div.flags{
+                    width: 20%;
+                    position: relative;
+                    p.time-flag{
+                        position: relative;
+                        right: 1px;
+                        font-size: 14px;
+                        color:rgba(0, 0, 0, 0.493);
+                    }
+                    p.message-flag{
+                        position: absolute;
+                        right: 35px;
+                        width: 13px;
+                        height: 13px;
+                        background-color: $blue-color;
+                        border-radius: 50%;
+                        font-size: 10px;
+                        color: white;
+                        padding: 1px 0px 0px 3px;
+                    }
+                    p.read-flag{
+                        position: absolute;
+                        right: 35px;
+                        i{
+                            color: green;
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+
+        // &.view{
+        //     width:33%;
+        // }
+    }
+    section.available-chat-mobile{
+        display: none!important;
+    }
+}
+
+//
+
+main{
+    section.user-profile-and-chat-pannel{
+        position: relative;
+        section.user-profile{
+            position: absolute;
+            left: 100%;
+            width: 40%;
+            top:1%;
+            transition:0.5s;
+            header{
+                .cross{
+                    margin-left: 10px;
+                    cursor: pointer;
+                    .first{
+                        width: 25px;
+                        height: 3px;
+                        background-color: rgba(0, 0, 0, 0.199);
+                        margin-top: 7px;
+                        transform: rotate(47deg) translate(14px, 5px);
+                    }
+                    .second{
+                        width: 25px;
+                        height: 3px;
+                        background-color: rgba(0, 0, 0, 0.199);
+                        margin-top: 7px;
+                        transform: rotate(47deg) translate(14px, 5px);
+                        // @extend .first;
+                        transform: rotate(-45deg) translate(2px, 7px);
+                    }
+                }
+                div.query-profile{
+                    @include container(90%,5%);
+                    background-color: white;
+                    border-radius: 20px;
+                    padding: 10px;
+                    margin-top: 25px;
+                    span{
+                        margin-left: 2px;
+                        i{
+                            color:rgba(0, 0, 0, 0.199)
+                        }
+                    }
+                    input[type="search"]{
+                        background-color: transparent;
+                        @include input-button-style;
+                        // width: 80%;
+                        @include container(80%, 2%);
+                        font-size: 16px;
+                        font-family: $font-family;
+                        color:rgba(0, 0, 0, 0.363);
+                        &::placeholder{
+                            
+                            color:rgba(0, 0, 0, 0.349);
+                        }
+                        
+                    }
+                }
+                div.user-profile{
+                    div.central-image{
+                        @include container(30%, 30%);
+                        div.display-photo{
+                            padding: 20px 0px 0px 10px;
+                            width: 100px;
+                            height: 100px;
+                            border-radius: 50%;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                    div.username-and-description{
+                        @include container(40%, 25%);
+                        padding: 15px 0px 10px 0px;
+                        h1.username{
+                            font-family: $font-family;
+                            font-weight: 500;
+                            color: black;
+                        }
+                        p.user-description{
+                            font-family: $font-family;
+                            font-weight:300;
+                            color: black;
+                            padding: 0px 0px 0px 20px;
+                        }
+                    }
+                    div.vidcall-and-chat{
+                        @include display-element-flex(center,space-between);
+                        @include container(40%,30%);
+                        div.chat-icon{
+                            width: 40%;
+                            border-right: 1px solid ;
+                            .icon{
+                                width: 50px;
+                                height: 50px;
+                                border-radius: 50%;
+                                background-color:  rgba(0, 0, 255, 0.164);
+                                cursor: pointer;
+                                i{
+                                    padding: 15px;
+                                    color: rgba(0, 0, 255, 0.842);
+                                    font-size: 20px;
+                                }
+                            }
+                            p.chat{
+                                font-family: $font-family;
+                                font-weight:300;
+                                color: black;
+                                padding: 5px 0px 0px 10px;
+                            }
+                        }
+                        div.vidcall-icon{
+                            width: 40%;
+                            .icon{
+                                cursor: pointer;
+                                width: 50px;
+                                height: 50px;
+                                border-radius: 50%;
+                                background-color: rgba(0, 0, 255, 0.164);
+                                i{
+                                    padding: 15px;
+                                    color: rgba(0, 0, 255, 0.842);
+                                    font-size: 20px;
+                                }
+                            }
+                            p.vidcall{
+                                font-family: $font-family;
+                                font-weight:300;
+                                color: black;
+                                padding: 5px 0px 0px 0px;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .friends-and-favorites{
+                padding-left: 40px;
+             
+                .friends{
+                    font-family: $font-family;
+                    font-weight:300;
+                    color: black;
+                    font-size: 14px;
+                    padding-top: 10px;
+                    span{
+                        margin-left: 10px;
+                    }
+                }
+                .favorites{
+                    font-family: $font-family;
+                    font-weight:300;
+                    color: black;
+                    font-size: 14px;
+                    padding-top: 10px;
+                    span{
+                        margin-left: 10px;
+                    }
+                //   @extend .friends;
+                }
+            }
+            .media-links-docs{
+                button.view-all{
+                    border-radius: 50px;
+                    border: 1px solid $blue-color;
+                    padding: 5px;
+                    color: $blue-color;
+                    background-color: white;
+                    margin-left: 45%;
+                    margin-top:15px ;
+                }
+                h3{
+                    font-family: $font-family;
+                    font-weight:500;
+                    color: black;
+                    padding: 15px 0px 15px 40px
+                }
+                .attachments{
+                    @include display-element-flex(center,null);
+                    @include container(80%,10%);
+                    gap:10px;
+                    .attachment{
+                        width: 20%;
+                        background-color: rgba(0, 0, 255, 0.164);;
+                        padding: 20px 10px 20px 10px ;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        span{
+                            font-family: $font-family;
+                            font-weight:400;
+                            color: $blue-color;
+                            font-size: 13px; 
+                            @include container(20%,30%);
+                        }
+                    }
+                }
+            }
+    
+            
+            &.view{
+                left:60%;
+            }
+        }
+    }
+}

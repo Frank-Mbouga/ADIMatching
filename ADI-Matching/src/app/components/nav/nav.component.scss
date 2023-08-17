@@ -1,0 +1,169 @@
+@import '../../../styles.scss';
+
+header {
+    position: relative;
+    padding-bottom: 120px;
+
+    section.holder {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: lightslategrey;
+        padding: 10px 0px 20px 0px;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+    
+        .adi-logo {
+            height: 7vmax;
+            width: 7vmax;
+            position: fixed;
+            margin-top: -1%;
+        }
+
+        .adi-logo-div{
+            margin-bottom: 5%;
+        }
+
+        div.search-adi {
+            position: relative;
+            width: 40%;
+            padding-left: 20%;
+            margin-top: 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            background-color: whitesmoke;
+            padding: 5px;
+
+            i {
+                color: #334155;
+            }
+
+            input[type=search] {
+                border-radius: 5px;
+                padding: 5px;
+                width: 80%;
+                margin-left: 2%;
+                height: 100%;
+                border: none;
+                outline: none;
+                background: none;
+                color: #334155;
+                font-family: poppins;
+
+                &:focus {
+                    border: 1px solid #33415560;
+                }
+
+                &::placeholder {
+                    // color: #D5D5D6;
+                    font-size: 18px;
+                    font-family: inter;
+                }
+            }
+        }
+
+        div.loggeduser-notification {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-right: 50px;
+
+            div.notification-bell {
+                position: relative;
+                margin-right: 30px;
+                cursor: pointer;
+                span {
+                    position: absolute;
+                    height: 20px;
+                    width:20px;
+                    border-radius: 50%;
+                    background-color: red;
+                    bottom: 60%;
+                    left: 56%;
+                    text-align: center;
+                    padding: 0px 0px 22px 0px ;
+                    @include text-style(16px, 600, rgb(255, 255, 255));
+
+                }
+
+                i {
+                    color: antiquewhite;
+                }
+            }
+
+            div.loggeduser {
+                position: relative;
+                right: 3%;
+
+                &:hover {
+                    div.metadata {
+                        display: block;
+                    }
+                }
+
+                div.image-holder {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+
+                    p {
+                        background-color: rgba(137, 43, 226, 0.832);
+                        padding: 10px 15px 10px 15px;
+                        border-radius: 50%;
+                        color: white;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                    }
+
+                }
+
+                div.metadata {
+                    background-color: white;
+                    border-radius: 10px;
+                    padding: 10px;
+                    position: absolute;
+                    right: 20%;
+                    display: none;
+
+                    span.username {
+                        padding: 10px;
+                        margin-left: 30px;
+                        text-align: center;
+                        @include text-style(16px, 400, rgba(15, 13, 13, 0.661));
+                    }
+
+                    p.email {
+                        padding: 10px;
+                        @include display-element-flex(center, space-between);
+                        gap: 10px;
+                        font-size: 15px;
+
+                        span {
+                            @include text-style(12px, 400, rgba(15, 13, 13, 0.661));
+
+                        }
+                    }
+
+                    div.logout {
+                        padding: 0px 0px 0px 10px;
+                        @include display-element-flex(center, null);
+                        gap: 10px;
+                        font-size: 15px;
+
+                        button {
+                            @include input-and-button(none);
+                            @include text-style(17px, 400, rgba(15, 13, 13, 0.661));
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

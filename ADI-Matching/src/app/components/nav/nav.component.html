@@ -1,0 +1,39 @@
+<header>
+    <section class="holder">
+        <div class="adi-logo-div">
+            <img class="adi-logo" src="../../../assets/images/newLogoADI.jpg">
+        </div>
+        <div class="search-adi">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" placeholder="Search" />
+        </div>
+        <div class="loggeduser-notification">
+            <div class="notification-bell" routerLink="/uoai/notifications">
+                <span *ngIf="matchRequests.length >= 1">{{matchRequests.length}}</span>
+                <i class="fa-solid fa-user-group"></i>
+            </div>
+            <div class="notification-bell">
+                <span style="display: none;"></span>
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="loggeduser" *ngIf="logincredits.loginStatus == true">
+                <div class="image-holder">
+                    <p>
+                        {{userservice.nameinitial(logincredits.Name)}}
+                    </p>
+                    <!-- <img [src]="Image" alt="Dp">/ -->
+                </div>
+                <div class="metadata">
+                    <span class="username">{{logincredits.Name}}</span>
+                    <p class="email"><i class="fa-regular fa-envelope"></i> <span>{{logincredits.email}}</span>
+                    </p>
+                    <div class="logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <button class="signin" (click)="signOut()">Sign out</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>

@@ -1,0 +1,69 @@
+<section class="home">
+    <div class="welcome-message">
+        <div class="welcome-account-setup">
+            <div class="name-descrip" *ngIf="logins">
+                <h1>Hi, {{logins.Name}}</h1>
+                <p class="descrip">
+                    Complete few steps to setup your account and enjoy the power of matching
+                </p>
+            </div>
+            <div class="account-setup">
+                <button type="button"><span>Setup Account</span> <i class="fa-solid fa-greater-than"></i></button>
+            </div>
+        </div>
+        <hr>
+        <div class="app-stats">
+            <ul>
+                <li>
+                    <span class="icon"><i class="fa-solid fa-people-group"></i></span>
+                    <p class="info">
+                        <small>Members</small>
+                        <span>2100</span>
+                    </p>
+                </li>
+                <li>
+                    <span class="icon"><i class="fa-solid fa-list-check"></i></span>
+                    <p class="info">
+                        <small>Valid Matches</small>
+                        <span>173</span>
+                    </p>
+                </li>
+                <li>
+                    <span class="icon"><i class="fa-solid fa-clipboard"></i></span>
+                    <p class="info">
+                        <small>Events</small>
+                        <span>50</span>
+                    </p>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+ 
+    <div class="connections">
+        <div class="connection-heading">
+            <h1>My Connections</h1>
+            <p>Connect with people from your diaspora</p>
+        </div>
+        <div class="available-connections" >
+            <div class="parker" *ngFor="let amatch of matches" >
+                <div class="aconnection">
+                    <span><i class="fa-regular fa-circle-dot"></i></span>
+                    <div class="dp-descrip">
+                        <div class="dp">
+                            <img src="../../../assets/images/7450159.png" alt="udp">
+                            <img src="../../../assets/images/7450159.png" alt="udp">
+                            <img src="../../../assets/images/7450159.png" alt="udp">
+                        </div>
+                        <div class="descrip">
+                            <h1 class="uname">{{amatch.data.Username}}</h1>
+                            <p class="h1-descrip">34 Connections</p>
+                        </div>
+                        <button type="button" (click)="MakeMatch($event,amatch)">Match</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+</section>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "adi-matching": {
+      "hosting": {
+        "ADI-Matching": [
+          "adi-matching"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "adi-matching"
+  }
+}

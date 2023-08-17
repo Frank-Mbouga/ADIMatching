@@ -1,0 +1,15 @@
+<h1>Hello and welcome to the Notifications Panel</h1>
+<section class="request-holder">
+    <div class="holder" *ngFor="let arequester of allRequesters">
+        <div class="image-name">
+            <div class="image-holder">
+                <img src="" alt="Image here">
+            </div>
+            <h1>{{arequester['data']['Username']}}</h1>
+        </div>
+        <div class="con-and-del">
+            <button class="con" type="button">Connect</button>
+            <button class="del" type="button">Delete</button>
+        </div>
+    </div>
+</section>
