@@ -41,7 +41,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import{MatRadioModule} from '@angular/material/radio';
-import { NgxPayPalModule } from 'ngx-paypal';
+// import { NgxPayPalModule } from 'ngx-paypal';
 import { PaypalComponent } from './components/paypal/paypal.component';
 
 @NgModule({
@@ -90,7 +90,7 @@ import { PaypalComponent } from './components/paypal/paypal.component';
     MatInputModule,
     FormsModule,
     MatRadioModule,
-    NgxPayPalModule
+    // NgxPayPalModule
   ],
   providers: [],
   bootstrap: [AppComponent]
