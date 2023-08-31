@@ -14,6 +14,8 @@ import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AuthenticationGuard } from './Guards/authentication.guard';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { KagertingComponent } from './components/kagerting/kagerting.component';
 
 const routes: Routes = [
   { path: "", component: MainComponent },
@@ -30,7 +32,9 @@ const routes: Routes = [
       { path: "chats", component: ChatsComponent },
       { path: "profile", component: ProfileComponent },
       { path: "settings", component: SettingsComponent },
+      {path: "contact", component: ContactComponent},
       {path:'notifications', component:NotificationsComponent},
+      {path: "kagerting", component: KagertingComponent}
     ]
   },
   {path:"**",component:NotFoundComponent}

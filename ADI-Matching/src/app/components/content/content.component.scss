@@ -1,0 +1,44 @@
+.content-dialog-div{
+    width: 50vmax;
+    height: 40vmax;
+}
+.media-video-header{
+  margin-left: 2%;
+}
+
+.media-image-header{
+  margin-left: 2%;
+}
+/* Les joel arrivent*/
+.media-video-content{
+  background-color: lightgray;
+  height: 10vmax;
+  width: 40vmax;
+  margin-left: 1%;
+  border-radius: 2rem;
+  margin-bottom: 1%;
+}
+
+.media-images-content{
+  background-color: lightgray;
+  height: 10vmax;
+  width: 40vmax;
+  margin-left: 1%;
+  border-radius: 2rem;
+  margin-bottom: 1%;
+}
+
+.describe-event-div{
+  margin-left: 1%;
+}
+.describe-event{
+   width: 40vmax;
+   height: 10vmax;
+}
+
+.button-content-div{
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-evenly;
+}
+

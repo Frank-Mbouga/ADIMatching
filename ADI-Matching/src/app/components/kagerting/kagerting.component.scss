@@ -1,5 +1,5 @@
 
-.event-page{
+.kagerting-page{
     width: 100%;
     height: 350%;
     position: absolute;
@@ -7,14 +7,15 @@
     background-color: rgb(235, 161, 161);
 }
 
-.heading-event-div{
+.heading-kagerting-div{
     margin-top: 2%;
     width: 60%;
     margin-left: 20%;
 }
-.heading-event-text{
+.heading-kagerting-text{
     text-align: center;
 }
+
 
 .second-bar-div{
     display: flex;
@@ -40,34 +41,57 @@
     margin-right: 20%;
     margin-top: 5%;
 }
-.create-event-div{
+
+.create-button-header-div{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.create-content-div{
     text-align: center;
     background-color: white;
     width: 15vmax;
     border-radius: 4rem;
-    margin-left: 42%;
+    margin-left: 25%;
 
 }
 
-.create-event-button{
+.create-content-button{
     font-weight: bold;
 }
 
-.display-all-events{
- display: flex;
- justify-content: space-between;
- margin-left: 25%;
+.create-news-div{
+    text-align: center;
+    background-color: white;
+    width: 15vmax;
+    border-radius: 4rem;
+    float: right;
+    margin-right: 20%;
+    border-radius: 2rem;
+
 }
 
-.all-media-events{
+.create-news-button{
+    font-weight: bold;
+}
+
+
+.display-all-kagertings{
+ display: flex;
+ justify-content: space-between;
+ margin-right: 15%;
+ margin-left: 5%;
+}
+
+.all-media-kagertings{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     margin-top: 0.8vmax;
-    margin-left: 2%;
+    margin-left: 10%;
     margin-top: 8%;
 }
-.all-text-events{
+.all-text-kagertings{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -76,11 +100,12 @@
 }
 .card-main-div {
     width: 40vmax;
-    height: 30vmax;
+    max-height: 30vmax;
     background-color: white;
     border-radius: 0.2rem;
     margin-top: 0.5vmax;
-    justify-content: space-between
+    justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .card-main-text-div {
@@ -89,19 +114,33 @@
     background-color: white;
     border-radius: 0.2rem;
     margin-top: 0.5vmax;
-    justify-content: space-between
+    justify-content: space-evenly;
+    border-radius: 1.4rem;
 }
 
 
 
 .card-body{
     justify-content: space-between;
+    margin-left: 3%;
 }
 
-.event-buttons-div{
+.kagerting-buttons-div{
     margin-top: 20%;
     display: flex;
     max-width: 90%;
     justify-content: space-evenly;
 }
 
+.kagerting-news-buttons-div{
+   display: flex;
+   justify-content: space-evenly;
+}
+
+.item-icon-text{
+    padding-right:8%;
+}
+
+.card-button-div{
+    float: right;
+}

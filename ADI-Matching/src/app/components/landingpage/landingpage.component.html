@@ -1,16 +1,7 @@
-<body>
-    <section class="nav">
-        <app-nav
-         [logincredits]="loginCredits" 
-         [breadCrumb]="getcrumb"
-        >
-
-        </app-nav>
-    </section>
-    <main>
-        <app-sidenav (emmitroute)="getCrumb($event)" class="holder"></app-sidenav>
-        <section class="display-route">
-            <router-outlet></router-outlet>
-        </section>
-    </main>
-</body>
+<div class="nav">
+    <app-nav [logincredits]="loginCredits" [breadCrumb]="getcrumb"></app-nav>
+</div>     
+    
+<div>
+        <router-outlet></router-outlet>
+</div>    

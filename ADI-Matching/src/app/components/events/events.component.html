@@ -1,1 +1,139 @@
-<p>events works!</p>
+<script src="https://www.paypal.com/sdk/js?currency=EUR&client-id=AffxHpwm0MtTibDoTeupoV7DFxCQ305vb942RGfyvXJCNjGC8zqdoCHfA9de7SHzwyYtUB_decP-Yr2K"></script>
+<div class="event-page">
+    <div class="heading-event-div">
+      <h2 class="heading-event-text">Create and share events to reach everyone from your diaspora in another way</h2>
+    </div>
+    <div class="second-bar-div">
+      <div class="search-div">
+        <input class="search-bar" type="search">
+    </div>
+    <div class="filter-div">
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <select matNativeControl required>
+          <option value="services">Service</option>
+          <option value="status">Status</option>
+          <option value="event">Event</option>
+          <option value="travel">Travel</option>
+          <option value="market-place">Market place</option>
+          <option value="job">Job</option>
+          <option value="dating">Dating</option>
+          <option value="my-family">Family</option>
+          <option value="knowledge">Knowledge</option>
+          <option value="other">Other</option>
+        </select>
+      </mat-form-field>
+      <!--<button class="filter-button" mat-button (click)="openFilter()">Filter</button>-->
+    </div>
+    </div>
+
+     
+
+
+    <!--<div class="card-main-text-div">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a id="match-create" href="#!" class="btn btn-primary">Match</a>
+        <button class="more-to-card" mat-button (click)="openDialog()">Show</button>
+      </div>
+    </div>-->
+    <div class="create-event-div">
+      <button class="create-event-button" mat-button (click)="openCreateEvent()">Create event</button>
+    </div>
+
+    <div class="display-all-events">
+      <div class="all-media-events">
+        <div class="card-main-div">
+          <div class="slide-image-div">
+              <ng-image-slider #nav class="slide-image"
+              [images]="imageObject"
+              [infinite]="false"
+              [autoSlide]="1"
+              slideImage="1"></ng-image-slider>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            
+            <div class="paypal-button">
+              <button #paymentRef mat-raised-button color="primary">Paypal</button>
+            </div>
+            <div class="event-buttons-div">
+              
+                <mat-icon>share</mat-icon><span class="item-icon-text">share</span>
+                <mat-icon>thumb_down_alt</mat-icon><span class="item-icon-text">down</span>
+                <mat-icon>thumb_up_alt</mat-icon><span class="item-icon-text">top</span>
+                <mat-icon>question_answer</mat-icon><span class="item-icon-text">comment</span>
+              
+            </div>
+          </div>
+        </div>
+        <div class="card-main-div">
+          <div class="slide-image-div">
+              <ng-image-slider #nav class="slide-image"
+              [images]="imageObject"
+              [infinite]="false"
+              [autoSlide]="1"
+              slideImage="1"></ng-image-slider>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="event-buttons-div">
+              
+                <mat-icon>share</mat-icon><span class="item-icon-text">share</span>
+                <mat-icon>thumb_down_alt</mat-icon><span class="item-icon-text">down</span>
+                <mat-icon>thumb_up_alt</mat-icon><span class="item-icon-text">top</span>
+                <mat-icon>question_answer</mat-icon><span class="item-icon-text">comment</span>
+              
+            </div>
+          </div>
+        </div>  
+        <div class="card-main-div">
+          <div class="slide-image-div">
+              <ng-image-slider #nav class="slide-image"
+              [images]="imageObject"
+              [infinite]="false"
+              [autoSlide]="1"
+              slideImage="1"></ng-image-slider>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="event-buttons-div">
+              
+                <mat-icon>share</mat-icon><span class="item-icon-text">share</span>
+                <mat-icon>thumb_down_alt</mat-icon><span class="item-icon-text">down</span>
+                <mat-icon>thumb_up_alt</mat-icon><span class="item-icon-text">top</span>
+                <mat-icon>question_answer</mat-icon><span class="item-icon-text">comment</span>
+              
+            </div>
+          </div>
+        </div>  
+        <div class="card-main-div">
+          <div class="slide-image-div">
+              <ng-image-slider #nav class="slide-image"
+              [images]="imageObject"
+              [infinite]="false"
+              [autoSlide]="1"
+              slideImage="1"></ng-image-slider>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="event-buttons-div">
+              
+                <mat-icon>share</mat-icon><span class="item-icon-text">share</span>
+                <mat-icon>thumb_down_alt</mat-icon><span class="item-icon-text">down</span>
+                <mat-icon>thumb_up_alt</mat-icon><span class="item-icon-text">top</span>
+                <mat-icon>question_answer</mat-icon><span class="item-icon-text">comment</span>
+              
+            </div>
+        
+          </div>
+        </div>    
+      </div>
+    </div>
+
+</div>

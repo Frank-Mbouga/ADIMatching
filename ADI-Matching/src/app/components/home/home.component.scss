@@ -1,165 +1,127 @@
 @import '../../../styles.scss';
 
-section.home{
-    div.welcome-message{
-        div.welcome-account-setup{
-            @include container(90%,5%);
-            margin-bottom: 25px;
+.home{
+   
+    
+    width: 100%;
+    height: auto;
+    position: absolute;
+    //background-color: rgb(238, 237, 237);
+    background-color: rgb(235, 161, 161);
+    
+}
 
-            @include display-element-flex(center,space-between);
-            div.name-descrip{
-                h1{
-                    @include text-style(17px,400px,rgba(255, 255, 255, 0.872));
-                }
-                p.descrip{
-                    @include text-style(15px,400px,rgba(255, 255, 255, 0.668));
-                }
+.text-head{
+    font-size: 2rem;
+}
 
-            }
-            div.account-setup{
-                button{
-                    @include input-and-button(2px solid #334155);
-                    border-radius: 5px;
-                    padding: 7px;
-                    background-color: white;
-                    &:hover{
-                        background-color: #334155;
-                        span{
-                            @include text-style(15px,400px,rgba(255, 255, 255, 0.882));
 
-                        }
-                    }
-                    span{
-                        @include text-style(15px,400px,#334155);
+.second-bar-div{
+    display: flex;
+    margin-left: 25%;
+}
 
-                    }
-                    i{
-                        padding-left: 20px;
-                        font-size: 14px;
-                        color: #334155;
-                    }
-                }
-            }
-        }
-        hr{
-            @include container(90%,5%);
-            height: 2px;
-            background-color: #ffffffa2;
-        }
-        div.app-stats{
-            @include container(90%,5%);
-            // margin-top: 25px;
-            ul{
-                display: grid;
-                grid-template-columns: auto auto auto;
-                li{
-                    margin-top: 25px;
+.search-div{
+    border-radius: 15rem;
+    margin-bottom: 5%;
+    margin-top:5%;
+    display: inline-block;
+}
 
-                    @include display-element-flex(center,null);
-                    gap: 20px;
-                  span.icon{
-                    border-radius: 50%;
-                    border: 2px solid #ffffffa2;
-                    padding: 30px;
-                    i{
-                        font-size: 24px;
-                        color: #ffffff;
-                    }
-                  }
-                  p.info{
-                    small{
-                        @include text-style(18px,400px,rgba(255, 255, 255, 0.882));
-                        display: block;
-                    }
-                    span{
-                        @include text-style(35px,400px,rgba(255, 255, 255, 0.882));
+.search-bar{
+    //width: 50%;
+    border-radius: 40px;
+    height: 60px;
+    width: 35vmax;
+}
 
-                    }
-                  }
+.filter-div{
+    float: right;
+    margin-right: 20%;
+    margin-top: 5%;
+}
+.card-main-div {
+    width: 25vmax;
+    background-color: white;
+    border-radius: 2rem;
+    margin-left: 10%;
+    justify-content: space-between;
+    margin-bottom: 1%;
+}
 
-                }
-            }
-        }
-    }
-    div.connections{
-        margin-top: 25px;
+.all-card-div{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.8vmax;
+    margin-left: 10%;
+    margin-top: 8%;
+}
+
+.card-body{
+    justify-content: space-between;
+}
+
+.welcome-message{
+    margin-left: 15%;
+}
+
+.welcome-account-setup{
+    display: flex;
+    justify-content: space-between;
+}
+
+.account-setup{
+    margin-right: 15%;
+}
+
+div.app-stats{
         @include container(90%,5%);
-
-        div.connection-heading{
-            h1{
-                @include text-style(17px,400px,rgba(255, 255, 255, 0.882));
-
-            }
-            p{
-                @include text-style(14px,400px,rgba(255, 255, 255, 0.882));
-            }
-        }
-        div.available-connections{
-            margin-top: 20px;
+        // margin-top: 25px;
+        ul{
             display: grid;
-            grid-template-columns: auto auto auto ;
-            div.parker{
-                div.aconnection{
-                    margin-left: 50px;
-                    width: 200px;
-                    height: 200px;
-                    border: 2px solid #ffffffa2;
-                    border-radius: 6px;
-                    background-color: white;
-                    margin-bottom: 30px;
-                    // transition: 2s;
-                    &:hover{
-                        scale: 1.2;
-                        transition: 1s;
-                    }
-                    span{
-                        float: right;
-                        margin-right: 10px;
-                        i{
-                            font-size: 17px;
-                            color: #334155; 
-                        }
-                    }
-                    div.dp-descrip{
-                        padding:15px 0px 0px 0px;
-                        div.dp{
-    
-                            width: 100px;
-                            height: 100px; 
-                            margin-left: 25%;                           border-radius: 50%;
-                            border-radius: 50%;
-                            img{
-                                height: 100%;
-                                width: 100%;
-                                border-radius: 50%;
-                            }
-                        }
-                        div.descrip{
-                            
-                            h1{
-                                @include text-style(17px,400px,#334155);
-                                text-align: center
-                            }
-                            p{
-                                @include text-style(14px,400px,#334155);
-                                text-align: center
-    
-                            }
-                        }
-                        button{
-                            @include container(60%,20%);
-                            @include input-and-button(2px solid #334155);
-                            @include text-style(17px,400px,#334155);
-                            padding: 3px;
-                            border-radius: 5px;
-                            &:hover{
-                                background-color: #334155;
-                                @include text-style(17px,600px,#ffffff);
-                            }
-                        }
-                    }
+            grid-template-columns: auto auto auto;
+            li{
+                margin-top: 25px;
+
+                @include display-element-flex(center,null);
+                gap: 20px;
+              span.icon{
+                border-radius: 50%;
+                border: 2px solid #ffffffa2;
+                padding: 30px;
+                i{
+                    font-size: 24px;
+                    color: #ffffff;
                 }
+              }
+              p.info{
+                small{
+                    @include text-style(18px,400px,rgba(255, 255, 255, 0.882));
+                    display: block;
+                }
+                span{
+                    @include text-style(35px,400px,rgba(255, 255, 255, 0.882));
+
+                }
+              }
+             }
             }
-        }
-    }
+}
+
+.more-to-card{
+    border-radius: 30px;
+    float: right;
+}
+
+#match-create{
+    margin-left: 5%;
+    width: -20px;
+}
+
+.slide-image-div{
+    width: 100%; 
+    height: 50%; 
+    text-align:center;
+    margin:0; 
+    padding:0;
 }

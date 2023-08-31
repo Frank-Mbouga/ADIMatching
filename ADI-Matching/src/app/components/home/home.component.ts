@@ -1,7 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Firestore, addDoc, collection, getDocs } from '@angular/fire/firestore';
+import { MatDialog } from '@angular/material/dialog';
 import { LocalstoreService } from 'src/app/services/localstore.service';
 import { MatchService } from 'src/app/services/match.service';
+import { CardComponent } from './card/card.component';
+import { FilterComponent } from '../filter/filter.component';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +18,8 @@ export class HomeComponent implements OnInit {
   constructor(
     public matchservice:MatchService,
     private localstore: LocalstoreService,
-    private fire:Firestore
+    private fire:Firestore,
+    public dialog: MatDialog
     
   ){
     matchservice.emmitMatches.subscribe((data:any)=>{
@@ -35,6 +39,21 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     
   }
+
+  openDialog(){
+    const dialogRef = this.dialog.open(CardComponent);
+    dialogRef.afterClosed().subscribe(result => { 
+        console.log(`Dialog result: ${result}`);
+     });
+  }
+
+  openFilter(){
+    const dialogRef = this.dialog.open(FilterComponent);
+    dialogRef.afterClosed().subscribe((result2: any) => {
+      console.log(`Dialog result2: ${result2} `);
+   });
+  
+   }
 
   MakeMatch(e:any,object:object){
     console.log(`this is object`,object);//In order to make a match request, we need to use the id
@@ -56,5 +75,29 @@ export class HomeComponent implements OnInit {
     addDoc(this.dbref,requestObject);
     
   }
+
+  imageObject = [{
+    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/5.jpg',
+    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/5.jpg',
+    title: 'Hummingbirds are amazing creatures'
+}, {
+    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/9.jpg',
+    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/9.jpg'
+}, {
+    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/4.jpg',
+    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/4.jpg',
+    title: 'Example with title.'
+},{
+    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/7.jpg',
+    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/7.jpg',
+    title: 'Hummingbirds are amazing creatures'
+}, {
+    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/1.jpg',
+    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/1.jpg'
+}, {
+    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/2.jpg',
+    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/2.jpg',
+    title: 'Example two with title.'
+}];
 
 }

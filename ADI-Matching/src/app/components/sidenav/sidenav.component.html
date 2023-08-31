@@ -1,8 +1,0 @@
-<section class="sidenav" *ngFor="let aroute of Route['baser']">
-    <section class="holder" >
-        <nav class="route" routerLink="{{tolower(aroute['route'])}}" (click)="emitroute($event, aroute['route'])" >
-            <span class="icon"><i class="{{aroute['icon']}}" ></i> </span>
-            <span class="routelink">{{aroute['route']}}</span>
-        </nav>
-    </section>
-</section>

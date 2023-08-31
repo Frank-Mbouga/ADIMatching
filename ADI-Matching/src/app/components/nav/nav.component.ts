@@ -7,7 +7,7 @@ import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss']
+  styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent {
   @Input() logincredits: any;

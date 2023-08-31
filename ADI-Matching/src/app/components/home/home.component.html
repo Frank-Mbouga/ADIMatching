@@ -1,11 +1,35 @@
-<section class="home">
+<div class="home">
+    <div class="second-bar-div">
+        <div class="search-div">
+          <input class="search-bar" type="search">
+      </div>
+      <div class="filter-div">
+        <mat-form-field>
+          <mat-label>Category</mat-label>
+          <select matNativeControl required>
+            <option value="services">Service</option>
+            <option value="status">Status</option>
+            <option value="event">Event</option>
+            <option value="travel">Travel</option>
+            <option value="market-place">Market place</option>
+            <option value="job">Job</option>
+            <option value="dating">Dating</option>
+            <option value="my-family">Family</option>
+            <option value="overnight">Overnight stay</option>
+            <option value="knowledge">Knowledge</option>
+            <option value="other">Other</option>
+          </select>
+        </mat-form-field>
+        <!--<button class="filter-button" mat-button (click)="openFilter()">Filter</button>-->
+      </div>
+      </div>
     <div class="welcome-message">
         <div class="welcome-account-setup">
             <div class="name-descrip" *ngIf="logins">
-                <h1>Hi, {{logins.Name}}</h1>
-                <p class="descrip">
-                    Complete few steps to setup your account and enjoy the power of matching
-                </p>
+                <h1 class="text-head">Welcome {{logins.Name}}</h1>
+                <h2 class="descrip">
+                    Complete your information to increase chances of matching with the right person
+                </h2>
             </div>
             <div class="account-setup">
                 <button type="button"><span>Setup Account</span> <i class="fa-solid fa-greater-than"></i></button>
@@ -41,12 +65,9 @@
     </div>
  
     <div class="connections">
-        <div class="connection-heading">
-            <h1>My Connections</h1>
-            <p>Connect with people from your diaspora</p>
-        </div>
         <div class="available-connections" >
-            <div class="parker" *ngFor="let amatch of matches" >
+          
+            <!--<div class="parker" *ngFor="let amatch of matches" >
                 <div class="aconnection">
                     <span><i class="fa-regular fa-circle-dot"></i></span>
                     <div class="dp-descrip">
@@ -62,8 +83,101 @@
                         <button type="button" (click)="MakeMatch($event,amatch)">Match</button>
                     </div>
                 </div>
+            </div>-->
+            <div class="all-card-div">
+                <div class="card-main-div">
+                    <div class="slide-image-div">
+                        <ng-image-slider #nav class="slide-image"
+                        [images]="imageObject"
+                        [infinite]="false"
+                        [autoSlide]="1"
+                        slideImage="1"></ng-image-slider>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a id="match-create" href="#!" class="match-button" mat-raised-button color="primary">Match</a>
+                      <button class="more-to-card" mat-raised-button color="primary" (click)="openDialog()">View more</button>
+                    </div>
+                </div>
+                <div class="card-main-div">
+                    <div class="slide-image-div">
+                        <ng-image-slider #nav class="slide-image"
+                        [images]="imageObject"
+                        [infinite]="false"
+                        [autoSlide]="1"
+                        slideImage="1"></ng-image-slider>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a id="match-create" href="#!" class="match-button" mat-raised-button color="primary">Match</a>
+                      <button class="more-to-card" mat-raised-button color="primary" (click)="openDialog()">View more</button>
+                    </div>
+                </div>
+                <div class="card-main-div">
+                    <div class="slide-image-div">
+                        <ng-image-slider #nav class="slide-image"
+                        [images]="imageObject"
+                        [infinite]="false"
+                        [autoSlide]="1"
+                        slideImage="1"></ng-image-slider>
+                    </div>
+                     <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a id="match-create" href="#!" class="match-button" mat-raised-button color="primary">Match</a>
+                      <button class="more-to-card" mat-raised-button color="primary" (click)="openDialog()">View more</button>
+                    </div>
+                </div>
+                <div class="card-main-div">
+                    <div class="slide-image-div">
+                        <ng-image-slider #nav class="slide-image"
+                        [images]="imageObject"
+                        [infinite]="false"
+                        [autoSlide]="1"
+                        slideImage="1"></ng-image-slider>
+                    </div>
+                     <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a id="match-create" href="#!" class="match-button" mat-raised-button color="primary">Match</a>
+                      <button class="more-to-card" mat-raised-button color="primary" (click)="openDialog()">View more</button>
+                    </div>
+                </div>
+                <div class="card-main-div">
+                    <div class="slide-image-div">
+                        <ng-image-slider #nav class="slide-image"
+                        [images]="imageObject"
+                        [infinite]="false"
+                        [autoSlide]="1"
+                        slideImage="1"></ng-image-slider>
+                    </div>
+                     <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a id="match-create" href="#!" class="match-button" mat-raised-button color="primary">Match</a>
+                      <button class="more-to-card" mat-raised-button color="primary" (click)="openDialog()">View more</button>
+                    </div>
+                </div>
+                <div class="card-main-div">
+                    <div class="slide-image-div">
+                        <ng-image-slider #nav class="slide-image"
+                        [images]="imageObject"
+                        [infinite]="false"
+                        [autoSlide]="1"
+                        slideImage="1"></ng-image-slider>
+                    </div>
+                 
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      
+                      <button id="match-create" href="#!" class="match-button" mat-raised-button color="primary">Match</button>
+                      <button class="more-to-card" mat-raised-button color="primary" (click)="openDialog()">View more</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
- 
-</section>
+</div>

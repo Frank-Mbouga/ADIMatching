@@ -1,0 +1,184 @@
+<div class="kagerting-page">
+    <div class="heading-kagerting-div">
+      <h2 class="heading-kagerting-text">We'll help you empower all your local communities in a another way irrespective if it is a diaspora,party friends, business group, etc </h2>
+    </div>
+    <div class="second-bar-div">
+      <div class="search-div">
+        <input class="search-bar" type="search">
+    </div>
+    <div class="filter-div">
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <select matNativeControl required>
+          <option value="services">Service</option>
+          <option value="status">Status</option>
+          <option value="event">Event</option>
+          <option value="travel">Travel</option>
+          <option value="market-place">Market place</option>
+          <option value="job">Job</option>
+          <option value="dating">Dating</option>
+          <option value="my-family">Family</option>
+          <option value="knowledge">Knowledge</option>
+          <option value="other">Other</option>
+        </select>
+      </mat-form-field>
+      <!--<button class="filter-button" mat-button (click)="openFilter()">Filter</button>-->
+    </div>
+    </div>
+  <div class="create-button-header-div">
+    <div class="create-content-div">
+        <button class="create-content-button" mat-button (click)="openContent()">Create content</button>
+      </div>
+      <div class="create-news-div">
+        <button class="create-news-button" mat-button (click)="openNews()">Create news</button>
+      </div>
+  </div>
+  
+    <div class="display-all-kagertings">
+      <div class="all-media-kagertings">
+        <div class="card-main-div">
+          <div class="slide-image-div">
+              <ng-image-slider #nav class="slide-image"
+              [images]="imageObject"
+              [infinite]="false"
+              [autoSlide]="1"
+              slideImage="1"></ng-image-slider>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="kagerting-buttons-div">
+                <mat-icon>share</mat-icon><span class="item-icon-text">share</span>
+                <mat-icon>thumb_down_alt</mat-icon><span class="item-icon-text">down</span>
+                <mat-icon>thumb_up_alt</mat-icon><span class="item-icon-text">top</span>
+                <mat-icon>question_answer</mat-icon><span class="item-icon-text">comment</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-main-div">
+          <div class="slide-image-div">
+              <ng-image-slider #nav class="slide-image"
+              [images]="imageObject"
+              [infinite]="false"
+              [autoSlide]="1"
+              slideImage="1"></ng-image-slider>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="kagerting-buttons-div">
+              <mat-icon>share</mat-icon><span class="item-icon-text">share</span>
+              <mat-icon>thumb_down_alt</mat-icon><span class="item-icon-text">down</span>
+              <mat-icon>thumb_up_alt</mat-icon><span class="item-icon-text">top</span>
+              <mat-icon>question_answer</mat-icon><span class="item-icon-text">comment</span>
+            </div>
+          </div>
+        </div>  
+        <div class="card-main-div">
+          <div class="slide-image-div">
+              <ng-image-slider #nav class="slide-image"
+              [images]="imageObject"
+              [infinite]="false"
+              [autoSlide]="1"
+              slideImage="1"></ng-image-slider>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="kagerting-buttons-div">
+              <mat-icon>share</mat-icon><span class="item-icon-text">share</span>
+              <mat-icon>thumb_down_alt</mat-icon><span class="item-icon-text">down</span>
+              <mat-icon>thumb_up_alt</mat-icon><span class="item-icon-text">top</span>
+              <mat-icon>question_answer</mat-icon><span class="item-icon-text">comment</span>
+            </div>
+          </div>
+        </div>  
+        <div class="card-main-div">
+          <div class="slide-image-div">
+              <ng-image-slider #nav class="slide-image"
+              [images]="imageObject"
+              [infinite]="false"
+              [autoSlide]="1"
+              slideImage="1"></ng-image-slider>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="kagerting-buttons-div">
+              <mat-icon>share</mat-icon><span class="item-icon-text">share</span>
+              <mat-icon>thumb_down_alt</mat-icon><span class="item-icon-text">down</span>
+              <mat-icon>thumb_up_alt</mat-icon><span class="item-icon-text">top</span>
+              <mat-icon>question_answer</mat-icon><span class="item-icon-text">comment</span>
+            </div>
+          </div>
+        </div>    
+      </div>
+
+      <div class="all-text-kagertings">
+        <div class="card-main-text-div">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="kagerting-news-buttons-div">
+              <mat-icon>share</mat-icon><span class="item-icon-text">share</span>
+              <mat-icon>thumb_down_alt</mat-icon><span class="item-icon-text">down</span>
+              <mat-icon>thumb_up_alt</mat-icon><span class="item-icon-text">top</span>
+              <mat-icon>question_answer</mat-icon><span class="item-icon-text">comment</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-main-text-div">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="kagerting-news-buttons-div">
+              <mat-icon>share</mat-icon><span class="item-icon-text">share</span>
+              <mat-icon>thumb_down_alt</mat-icon><span class="item-icon-text">down</span>
+              <mat-icon>thumb_up_alt</mat-icon><span class="item-icon-text">top</span>
+              <mat-icon>question_answer</mat-icon><span class="item-icon-text">comment</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-main-text-div">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="kagerting-news-buttons-div">
+              <mat-icon>share</mat-icon><span class="item-icon-text">share</span>
+              <mat-icon>thumb_down_alt</mat-icon><span class="item-icon-text">down</span>
+              <mat-icon>thumb_up_alt</mat-icon><span class="item-icon-text">top</span>
+              <mat-icon>question_answer</mat-icon><span class="item-icon-text">comment</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-main-text-div">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="kagerting-news-buttons-div">
+              <mat-icon>share</mat-icon><span class="item-icon-text">share</span>
+              <mat-icon>thumb_down_alt</mat-icon><span class="item-icon-text">down</span>
+              <mat-icon>thumb_up_alt</mat-icon><span class="item-icon-text">top</span>
+              <mat-icon>question_answer</mat-icon><span class="item-icon-text">comment</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-main-text-div">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="kagerting-news-buttons-div">
+              <mat-icon>share</mat-icon><span class="item-icon-text">share</span>
+              <mat-icon>thumb_down_alt</mat-icon><span class="item-icon-text">down</span>
+              <mat-icon>thumb_up_alt</mat-icon><span class="item-icon-text">top</span>
+              <mat-icon>question_answer</mat-icon><span class="item-icon-text">comment</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
+
+</div>
+

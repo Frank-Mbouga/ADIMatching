@@ -1,49 +1,44 @@
-import { Component, OnInit, NgModule, ViewChild, ElementRef } from '@angular/core';
-import { CreateeventComponent } from '../createevent/createevent.component';
+import { Component } from '@angular/core';
+import { CardComponent } from '../home/card/card.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Dialog } from '@angular/cdk/dialog';
+import { ContentComponent } from '../content/content.component';
+import { NewsComponent } from '../news/news.component';
 import { FilterComponent } from '../filter/filter.component';
-import { PaymentService } from 'src/app/services/payment.service';
-//import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal/public_api';
-
 
 @Component({
-  selector: 'app-events',
-  templateUrl: './events.component.html',
-  styleUrls: ['./events.component.scss']
+  selector: 'app-kagerting',
+  templateUrl: './kagerting.component.html',
+  styleUrls: ['./kagerting.component.scss']
 })
-export class EventsComponent implements OnInit {
-    //public payPalConfig?: IPayPalConfig;
-    amount = 0;
-
-    @ViewChild('paymentRef', {static: true}) paymentRef!: ElementRef;
+export class KagertingComponent {
+  constructor(
+    public dialog: MatDialog
+  ){
     
-    constructor( public dialog: MatDialog, private payment: PaymentService){
+  }
+  openContent(){
+    const dialogRef = this.dialog.open(ContentComponent);
+    dialogRef.afterClosed().subscribe((result: any) => { 
+        console.log(`Dialog result: ${result}`);
+     });
+ } 
+ openFilter(){
+  const dialogRef = this.dialog.open(FilterComponent);
+  dialogRef.afterClosed().subscribe((result2: any) => {
+    console.log(`Dialog result2: ${result2} `);
+ });
 
-    }
-    ngOnInit(): void {
-        //this.amount = this.payment
-        window.paypal.Buttons().render(this.paymentRef.nativeElement);
-        throw new Error('Method not implemented.');
-    }
+ }
 
-
-    
-
-    openCreateEvent(){
-        const dialogRef = this.dialog.open(CreateeventComponent);
-        dialogRef.afterClosed().subscribe(result => { 
-            console.log(`Dialog result: ${result}`);
-         });
-      }
-    
-    openFilter(){
-        const dialogRef = this.dialog.open(FilterComponent);
-        dialogRef.afterClosed().subscribe(result => {
-            console.log(`Dialog result: ${result}`);
-        })
-    }
-    
-
+ openNews(){
+  const dialogRef = this.dialog.open(NewsComponent);
+  dialogRef.afterClosed().subscribe((news_result: any) => { 
+      console.log(`Dialog news_result: ${news_result}`);
+   });
+}
+  
+  
 
   imageObject = [{
     image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/5.jpg',
@@ -68,5 +63,4 @@ export class EventsComponent implements OnInit {
     thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/2.jpg',
     title: 'Example two with title.'
 }];
-
 }
