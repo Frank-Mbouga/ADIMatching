@@ -1,0 +1,14 @@
+<section class="request-holder">
+    <div class="holder" *ngFor="let arequester of getRequester()">
+        <div class="image-name">
+            <div class="image-holder">
+                <img src={{arequester.data.PhotoURL}} alt="Image here">
+            </div>
+            <h1>{{arequester['data']['Name']}}</h1>
+        </div>
+        <div class="con-and-del">
+            <button class="con" type="button"  (click)="connect($event,arequester,connectResolve,deleteResolve)" #connectResolve>Connect</button>
+            <button class="del" type="button" (click)="disconnect($event,arequester,connectResolve,deleteResolve)" #deleteResolve>Delete</button>
+        </div>
+    </div>
+</section>

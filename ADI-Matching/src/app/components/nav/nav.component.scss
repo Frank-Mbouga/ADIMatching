@@ -1,4 +1,16 @@
 @import '../../../styles.scss';
+.navigation-bar-div{
+  position:relative;
+  padding-bottom: 60px;
+
+  .fixed-nav {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+  }
+}
+
 
 .adi-logo-div{
   height: 100%;
@@ -23,6 +35,7 @@
 
 .navigation-bar{
     background-color: black;
+    padding: 1.5vmax;
 }
         
 
@@ -38,7 +51,7 @@ i {color: antiquewhite;}
   color: white;
   padding: 0.5vmax 0.9vmax 0.7vmax 0.9vmax;
   justify-content: space-between;
-  align-items: cente
+  align-items: center
 }
 
 .button {
@@ -52,3 +65,75 @@ i {color: antiquewhite;}
     margin-top: 1.3vmax;
     width: 10%;
  }
+
+ div.loggeduser {
+  position: relative;
+  right: 3%;
+  z-index: 100;
+  &:hover {
+      div.metadata {
+          display: block;
+      }
+  }
+
+  div.image-holder {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+
+      p {
+          background-color: rgba(137, 43, 226, 0.832);
+          padding: 10px 15px 10px 15px;
+          border-radius: 50%;
+          color: white;
+      }
+
+      img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+      }
+
+  }
+
+  div.metadata {
+      background-color: white;
+      border-radius: 10px;
+      padding: 10px;
+      position: absolute;
+      right: 20%;
+      display: none;
+
+      span.username {
+          padding: 10px;
+          margin-left: 30px;
+          text-align: center;
+          @include text-style(16px, 400, rgba(15, 13, 13, 0.661));
+      }
+
+      p.email {
+          padding: 10px;
+          @include display-element-flex(center, space-between);
+          gap: 10px;
+          font-size: 15px;
+
+          span {
+              @include text-style(12px, 400, rgba(15, 13, 13, 0.661));
+
+          }
+      }
+
+      div.logout {
+          padding: 0px 0px 0px 10px;
+          @include display-element-flex(center, null);
+          gap: 10px;
+          font-size: 15px;
+
+          button {
+              @include input-and-button(none);
+              @include text-style(17px, 400, rgba(15, 13, 13, 0.661));
+
+          }
+      }
+  }
+}
