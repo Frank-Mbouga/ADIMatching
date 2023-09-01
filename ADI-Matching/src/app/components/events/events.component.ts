@@ -3,6 +3,7 @@ import { CreateeventComponent } from '../createevent/createevent.component';
 import { MatDialog } from '@angular/material/dialog';
 import { FilterComponent } from '../filter/filter.component';
 import { PaymentService } from 'src/app/services/payment.service';
+import { PaypalComponent } from '../paypal/paypal.component';
 //import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal/public_api';
 
 
@@ -27,7 +28,12 @@ export class EventsComponent implements OnInit {
     }
 
 
-    
+    openPaypal(){
+        const dialogRef = this.dialog.open(PaypalComponent);
+        dialogRef.afterClosed().subscribe(resultPaypal => {
+
+        });
+    }
 
     openCreateEvent(){
         const dialogRef = this.dialog.open(CreateeventComponent);

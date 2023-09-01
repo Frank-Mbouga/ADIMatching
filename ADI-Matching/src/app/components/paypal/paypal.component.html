@@ -1,1 +1,8 @@
 <p>paypal works!</p>
+
+<div *ngIf="!paidFor">
+   <h2>Buy this couch - ${{product.price}}</h2>
+   <p>{{product.description}}</p>
+</div>
+
+<div #paypal></div>
