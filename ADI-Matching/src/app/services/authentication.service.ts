@@ -5,17 +5,23 @@ import { Router } from '@angular/router';
 import { LocalstoreService } from './localstore.service';
 import { IUser } from '../interfaces/user';
 import { UserService } from './user.service';
+import { Firestore, addDoc, collection, getDocs, query, where } from '@angular/fire/firestore';
 Inject
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-  googeProvider = new GoogleAuthProvider();
+  dbref = collection(this.fire, 'Users');
+
+  googleProvider = new GoogleAuthProvider();
   facebookProvider = new FacebookAuthProvider();
+  private boosts = this.googleProvider.setCustomParameters({ prompt: 'select_account' });
+
   constructor(
     private auth: Auth, 
     private route: Router,
      private localStore: LocalstoreService,
+     private fire : Firestore
     // @Inject(String) private userCredential:UserCredential,
      ) { }
   actionCodeSettings = {
@@ -88,38 +94,50 @@ export class AuthenticationService {
 
   }
   googleSignIn() {
-    signInWithPopup(this.auth, this.googeProvider)
-      .then((result) => {
-        getRedirectResult(this.auth)
-        .then(() => {
-          const credential = GoogleAuthProvider.credentialFromResult(result);
-          const token = credential?.idToken;
-          this.localStore.set("access Token",token);
-          
-        }).catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
+    signInWithPopup(this.auth, this.googleProvider)
+      .then(async (result) => {
+
+        const querySnapshot = await getDocs(query(this.dbref, where('email', '==', result.user.email)))
+        const poter = querySnapshot.docs.map(doc => {
+          return doc.data()
+
         })
-        console.log(result.user);
-        onAuthStateChanged(this.auth, (user) => {
-          this.localStore.set('User', {
-            Name: user?.displayName,
-            email: user?.email,
-            PhotoURL: user?.photoURL,
-            loginStatus: user?.emailVerified
+
+        if (poter.length === 0) {
+          addDoc(this.dbref, {
+            Name: result.user.displayName,
+            email: result.user.email,
+            PhotoURL: result.user.photoURL,
           })
-        })
-        this.route.navigate(["/uoai/home"]);
-      }).catch((err) => {
-        console.log(err.code);
+          this.localStore.set('User', {
+            Name: result.user.displayName,
+            email: result.user.email,
+            PhotoURL: result.user.photoURL,
+            loginStatus: result.user.emailVerified
+          })
+          this.route.navigate(["/uoai/home"])
+          return
+        }
 
+        if (poter[0]['email'] == result.user.email) {
+          console.log(`Account already Exist. REDIRECTING YOU TO DASHBOARD`);
+          this.localStore.set('User', {
+            Name: result.user.displayName,
+            email: result.user.email,
+            PhotoURL: result.user.photoURL,
+            loginStatus: result.user.emailVerified
+          })
+          this.route.navigate(["/uoai/home"]);
+          return
+        }
+
+      })
+      .catch((err) => {
+        console.log(err);
       });
-
-   
   }
-  // userCredential(userCredential: any) {
-  //   throw new Error('Method not implemented.');
-  // }
+
+
   facebookSignIn() {
     signInWithPopup(this.auth, this.facebookProvider)
       .then((result) => {

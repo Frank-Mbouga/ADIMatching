@@ -1,48 +1,55 @@
 <div class="navigation-bar-div">
-    <mat-toolbar class="navigation-bar">
-        
-        <div class="adi-logo-div"></div>
-        <div class="nav-menu">
-            
-            <div class="home-menu" routerLink="/uoai/home">Home</div> 
-            <div class="home-menu" routerLink="/uoai/kagerting">Kagerting</div> 
-            <div class="event-menu" routerLink="/uoai/events">Events</div> 
-            <div class="chat-menu" routerLink="/uoai/chats">Chat</div>
-
-            <button class="more-menu" mat-button [matMenuTriggerFor]="menu">More</button>
-            <mat-menu #menu="matMenu">
-            <button mat-menu-item routerLink="/uoai/matches">Matches</button>
-            <button mat-menu-item routerLink="/uoai/profile">Profile</button>
-            <!--<button mat-menu-item routerLink="/uoai/settings">Setting</button>-->
-            <button mat-menu-item routerLink="/uoai/contact">Contact Us</button>
-            </mat-menu>
-
-        </div>
-            
-        <div class="right-nav-content">
-          
-            <div class="notification-icon" routerLink="/uoai/notifications">
-                <span *ngIf="matchRequests.length >= 1">{{matchRequests.length}}</span>
-                <i class="fa-solid fa-user-group"></i>
-            </div>
-            <div class="notification-bell">
-                <span style="display: none;"></span>
-                <i class="fa-solid fa-bell"></i>
-            </div>
-            <div class="image-holder">
-                <p class="user-log-icon">{{userservice.nameinitial(logincredits.Name)}}</p>
-            </div>
-            <!--<div class="metadata">
-                <div>{{logincredits.Name}}</div>
-                <div><i class="fa-regular fa-envelope"></i> <span>{{logincredits.email}}</span>
-                </div>
-                <div class="logout">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <button mat-button>class="signin" (click)="signOut()">Sign out</button>
+    <div class="fixed-nav">
+        <mat-toolbar class="navigation-bar">
     
+            <div class="adi-logo-div"></div>
+            <div class="nav-menu">
+    
+                <div class="home-menu" routerLink="/uoai/home">Home</div>
+                <div class="home-menu" routerLink="/uoai/kagerting">Kagerting</div>
+                <div class="event-menu" routerLink="/uoai/events">Events</div>
+                <div class="chat-menu" routerLink="/uoai/chats">Chat</div>
+    
+                <button class="more-menu" mat-button [matMenuTriggerFor]="menu">More</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item routerLink="/uoai/matches">Matches</button>
+                    <button mat-menu-item routerLink="/uoai/profile">Profile</button>
+                    <!--<button mat-menu-item routerLink="/uoai/settings">Setting</button>-->
+                    <button mat-menu-item routerLink="/uoai/contact">Contact Us</button>
+                </mat-menu>
+    
+            </div>
+    
+            <div class="right-nav-content">
+    
+                <div class="notification-icon" routerLink="/uoai/notifications">
+                    <span *ngIf="matchRequests.length >= 1">{{matchRequests.length}}</span>
+                    <i class="fa-solid fa-user-group"></i>
                 </div>
-            </div>-->
-        </div>
-        
-    </mat-toolbar>
+                <div class="notification-bell">
+                    <span style="display: none;"></span>
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+                <div class="loggeduser" *ngIf="logincredits.loginStatus == true">
+                    <div class="image-holder">
+                        <p>
+                            {{userservice.nameinitial(logincredits.Name)}}
+                        </p>
+                        <!-- <img [src]="Image" alt="Dp">/ -->
+                    </div>
+                    <div class="metadata">
+                        <span class="username">{{logincredits.Name}}</span>
+                        <p class="email"><i class="fa-regular fa-envelope"></i> <span>{{logincredits.email}}</span>
+                        </p>
+                        <div class="logout">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <button class="signin" (click)="signOut()">Sign out</button>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </mat-toolbar>
+    </div>
 </div>
