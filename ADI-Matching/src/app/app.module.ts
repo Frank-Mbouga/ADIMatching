@@ -43,6 +43,7 @@ import { MatInputModule } from '@angular/material/input';
 import{MatRadioModule} from '@angular/material/radio';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { PaypalComponent } from './components/paypal/paypal.component';
+import { RequestsidepullComponent } from './components/requestsidepull/requestsidepull.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { PaypalComponent } from './components/paypal/paypal.component';
     NotificationsComponent,
     ContactComponent,
     KagertingComponent,
-    PaypalComponent
+    PaypalComponent,
+    RequestsidepullComponent
   ],
   imports: [
     FormsModule,

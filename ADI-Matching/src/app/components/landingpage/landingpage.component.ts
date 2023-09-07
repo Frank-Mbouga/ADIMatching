@@ -77,11 +77,15 @@ export class LandingpageComponent implements OnInit {
 
     })()
 
+
+    //function to get all match requests from firestore
     try {
 
       (async () => {
         const request = await this.getFirestoreMatchRequest(this.requestCollection);
         this.matchservice.getMR(request.map(data => {
+          console.log('we good ',data.data());
+          
           return { data: data.data() }
         }))
       })()
@@ -90,6 +94,7 @@ export class LandingpageComponent implements OnInit {
       console.log(error);
     }
 
+    // function to retrieve login information.
     if (this.localstore.get('User').status == true) {
       const result = this.getInfoFromLocalStorage();
       this.matchservice.getLogins(result);
@@ -121,6 +126,7 @@ export class LandingpageComponent implements OnInit {
     })
   }
 
+  //this function is created mainly to collect all your connections and emmit to the matches component
   getthematches() {
     const email = this.localstore.get('User').data['email' as keyof object];
 
@@ -153,5 +159,7 @@ export class LandingpageComponent implements OnInit {
   }
   gettherequests(e:any){
     this.requests = e;
+    console.log('you cliked button');
+
   }
 }

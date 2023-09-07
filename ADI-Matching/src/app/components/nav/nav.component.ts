@@ -15,7 +15,7 @@ export class NavComponent {
   @Output() showRequests = new EventEmitter<boolean>()
 
   out = true;
-  matchRequests: any[] = [];
+ public matchRequests: any[] = [];
   constructor(
     private localstore: LocalstoreService,
     public userservice: UserService,
@@ -23,12 +23,17 @@ export class NavComponent {
     private matchservice: MatchService
   ) {
     matchservice.emmitMR.subscribe(mar => {
+      console.log('mar:', mar);
+      
       this.matchRequests = mar
+      console.log('from Nav', this.matchRequests);
+      
     })
   }
 
   toggleClass(e: any) {
     this.out = !this.out
+    
     this.showRequests.emit(this.out);
   }
   signOut() {

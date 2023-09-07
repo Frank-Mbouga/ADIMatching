@@ -22,8 +22,8 @@
     
             <div class="right-nav-content">
     
-                <div class="notification-icon" routerLink="/uoai/notifications">
-                    <span *ngIf="matchRequests.length >= 1">{{matchRequests.length}}</span>
+                <div class="notification-icon" (click)="toggleClass($event)">
+                    <span >{{matchRequests.length}}</span>
                     <i class="fa-solid fa-user-group"></i>
                 </div>
                 <div class="notification-bell">
@@ -35,7 +35,6 @@
                         <p>
                             {{userservice.nameinitial(logincredits.Name)}}
                         </p>
-                        <!-- <img [src]="Image" alt="Dp">/ -->
                     </div>
                     <div class="metadata">
                         <span class="username">{{logincredits.Name}}</span>
@@ -49,7 +48,6 @@
                     </div>
                 </div>
             </div>
-    
         </mat-toolbar>
     </div>
 </div>

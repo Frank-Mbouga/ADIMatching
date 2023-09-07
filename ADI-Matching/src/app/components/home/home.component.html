@@ -84,7 +84,7 @@
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
-                        <button id="match-create" class="match-button" mat-raised-button color="primary">Match</button>
+                        <button id="match-create" class="match-button" (click)="makeMatch($event,amatch,disableButton)" #disableButton>Match</button>
                         <button class="more-to-card" mat-raised-button color="primary" (click)="openDialog()">View More</button>
                     </div>
                 </div>
