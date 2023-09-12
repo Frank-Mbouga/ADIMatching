@@ -1,10 +1,11 @@
 .content-dialog-div{
-    width: 35vmax;
+    width:80%;
+    margin-left: 10%;
     height: 20vmax;
 }
-.media-content{
+// .media-content{
  
-}
+// }
 .media-video-content{
   background-color: lightgray;
   height: 10vmax;
@@ -23,6 +24,21 @@
 
 .content-header-div{
    margin-left: 1%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.content-header-div button{
+  outline: none!important;
+  border: none!important;
+  background-color: transparent;
+  mat-icon{
+    font-size: 50px;
+    height: 50px ;
+    width: 50px;
+
+}
 }
 
 .describe-event-div{

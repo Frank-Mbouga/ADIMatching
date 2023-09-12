@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-educationinfo',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./educationinfo.component.scss']
 })
 export class EducationinfoComponent {
+  constructor(
+    private dialogRef : MatDialogRef<EducationinfoComponent>
+  ){}
+  add(e:any){
 
+  }
+  cancel(e:any){
+    this.dialogRef.close();
+  }
 }

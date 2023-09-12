@@ -29,7 +29,6 @@ export class ProfileComponent implements OnInit {
 
     matchservice.emmitLogins.subscribe((login=>{
       this.logins = login;
-      console.log(this.logins,'logins');
       
   }))
      
@@ -47,50 +46,62 @@ export class ProfileComponent implements OnInit {
 
   infoFromLocalStorage = this.localstore.get('User').data;
 
-  takeMeToServices(e:any){
-    this.route.navigate(['uoai/profile/services']);
-  }
-
   showContactInfo(e:any){
     console.log('you clicked this button');
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = false;
+    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
+    dialogConfig.width = '80%';
+    dialogConfig.maxHeight= '80vh'
     this.dialog.open(ContactinfoComponent,dialogConfig)
   }
   showEducationInfo(e:any){
     console.log('you clicked this button');
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = false;
+    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
+    dialogConfig.width = '80%';
+    dialogConfig.maxHeight= '80vh'
     this.dialog.open(EducationinfoComponent,dialogConfig)
   }
   showRelatedSkills(e:any){
     console.log('you clicked this button');
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = false;
+    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
+    dialogConfig.width = '80%';
+    dialogConfig.maxHeight= '80vh'
     this.dialog.open(RelatedskillsComponent,dialogConfig)
   }
   showServices(e:any){
     console.log('you clicked this button');
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = false;
+    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
+    dialogConfig.width = '80%';
+    dialogConfig.maxHeight= '80vh'
+    dialogConfig.data ={
+      title:'Add Services'
+    }
+
     this.dialog.open(ServicesComponent,dialogConfig)
   }
   showWebsite(e:any){
     console.log('you clicked this button');
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = false;
+    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
+    dialogConfig.width = '80%';
+    dialogConfig.maxHeight= '80vh'
     this.dialog.open(WebsiteComponent,dialogConfig)
   }
   showHighlights(e:any){
     console.log('you clicked this button');
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = false;
+    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
+    dialogConfig.width = '80%';
+    dialogConfig.maxHeight= '80vh'
     // this.dialog.open(,dialogConfig)
   }
 }

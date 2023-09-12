@@ -3,7 +3,7 @@
         <mat-card>
             <div class="mat-header-cross">
                 <mat-card-header>Education</mat-card-header>
-                <button color="disabled"><mat-icon aria-hidden="true">cancel</mat-icon></button>
+                <button color="disabled" (click)="cancel($event)"><mat-icon aria-hidden="true">cancel</mat-icon></button>
             </div>
             <mat-form-field>
                 <label for="school">Name of School</label>
@@ -29,7 +29,7 @@
                 <input type="date"  name="dueDate" class="form-control"
                     placeholder="Task due date">
             </div>
-            <button><mat-icon>add</mat-icon></button>
+            <button (click)="add($event)"><mat-icon>add</mat-icon></button>
         </mat-card>
     </form>
 </section>
