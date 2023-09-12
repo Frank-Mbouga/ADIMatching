@@ -51,11 +51,6 @@ const routes: Routes = [
 
     ]
   },
-  {path:'uoai/profile/services',component:ServicesComponent},
-  {path:'uoai/profile/education',component:EducationinfoComponent},
-  {path:'uoai/profile/website',component:WebsiteComponent},
-  {path:'uoai/profile/contact',component:ContactinfoComponent},
-  {path:'uoai/profile/skills',component:RelatedskillsComponent},
 
   {path:"**",component:NotFoundComponent}
 ];
