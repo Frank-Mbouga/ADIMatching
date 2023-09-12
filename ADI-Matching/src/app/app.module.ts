@@ -108,6 +108,6 @@ import { ContactinfoComponent } from './components/profileeditors/contactinfo/co
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[WebsiteComponent,ServicesComponent,ContactComponent]
+  // entryComponents:[WebsiteComponent,ServicesComponent,ContactComponent]
 })
 export class AppModule { }
