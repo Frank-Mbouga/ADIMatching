@@ -55,8 +55,19 @@ export class AuthenticationService {
             Name: user?.displayName,
             email: user?.email,
             PhotoURL: user?.photoURL,
-            loginStatus: user?.emailVerified
+            loginStatus: user?.emailVerified,
+            dob:user?.metadata
           })
+          console.log(
+            {
+              Name: user?.displayName,
+              email: user?.email,
+              PhotoURL: user?.photoURL,
+              loginStatus: user?.emailVerified,
+              dob:user?.metadata
+            }
+          );
+          
         })
         // this.route.navigate(['/dashboard']);
       }).catch((err: any) => {
@@ -113,8 +124,19 @@ export class AuthenticationService {
             Name: result.user.displayName,
             email: result.user.email,
             PhotoURL: result.user.photoURL,
-            loginStatus: result.user.emailVerified
+            loginStatus: result.user.emailVerified,
+            dob:result.user.metadata
           })
+          console.log(
+            {
+              Name: result.user.displayName,
+            email: result.user.email,
+            PhotoURL: result.user.photoURL,
+            loginStatus: result.user.emailVerified,
+            dob:result.user.metadata
+            }
+          );
+          
           this.route.navigate(["/uoai/home"])
           return
         }
@@ -125,8 +147,19 @@ export class AuthenticationService {
             Name: result.user.displayName,
             email: result.user.email,
             PhotoURL: result.user.photoURL,
-            loginStatus: result.user.emailVerified
+            loginStatus: result.user.emailVerified,
+            dob:result.user.metadata
+
           })
+          console.log(
+            {
+              Name: result.user.displayName,
+            email: result.user.email,
+            PhotoURL: result.user.photoURL,
+            loginStatus: result.user.emailVerified,
+            dob:result.user.providerData
+            }
+          );
           this.route.navigate(["/uoai/home"]);
           return
         }

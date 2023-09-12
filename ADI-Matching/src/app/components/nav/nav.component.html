@@ -21,8 +21,10 @@
             </div>
     
             <div class="right-nav-content">
+                <!-- <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon> -->
+
     
-                <div class="notification-icon" routerLink="/uoai/notifications">
+                <div class="notification-bell" (click)="toggleClass($event)">
                     <span *ngIf="matchRequests.length >= 1">{{matchRequests.length}}</span>
                     <i class="fa-solid fa-user-group"></i>
                 </div>
@@ -49,7 +51,6 @@
                     </div>
                 </div>
             </div>
-    
         </mat-toolbar>
     </div>
 </div>

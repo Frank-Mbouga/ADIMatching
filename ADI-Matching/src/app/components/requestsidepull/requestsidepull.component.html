@@ -1,4 +1,5 @@
 <section class="request-holder">
+    this is the requestside pull component
     <div class="holder" *ngFor="let arequester of getRequester()">
         <div class="image-name">
             <div class="image-holder">
@@ -8,7 +9,7 @@
         </div>
         <div class="con-and-del">
             <button class="con" type="button"  (click)="connect($event,arequester,connectResolve,deleteResolve)" #connectResolve>Connect</button>
-            <button class="del" type="button" (click)="disconnect($event,arequester,connectResolve,deleteResolve)" #deleteResolve>Delete</button>
+            <button class="del" type="button" (click)="disconnect($event,arequester,connectResolve,deleteResolve)" #deleteResolve>Reject</button>
         </div>
     </div>
 </section>

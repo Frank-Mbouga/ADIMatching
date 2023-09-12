@@ -1,0 +1,55 @@
+<section class="services">
+        <mat-card>
+            <div class="mat-header-cross">
+                <mat-card-header>Name Of User</mat-card-header>
+                <button color="disabled"><mat-icon  aria-hidden="false" >cancel</mat-icon></button>
+            </div>
+            <div>
+                <label for="Service">email</label>
+                <P class="email">Users email</P>
+            </div>
+            <div>
+                <label for="Service">Portfolio</label>
+                <P class="email"><a href="usersportfolio" target="_blank" rel="noopener noreferrer">oboy</a></P>
+            </div>
+            <div>
+                <label for="Service">Phone Number</label>
+                <P class="email">Phone number</P>
+            </div>
+            <div>
+                <label for="Service">Birthday</label>
+                <p class="birthday">Birthday</p>
+            </div>
+        </mat-card>
+</section>
+
+<section class="edit-contact-info">
+    <form action="">
+        <mat-card>
+            <div class="mat-header-cross">
+                <mat-card-header>Edit contact</mat-card-header>
+                <button color="disabled" (click)="cancel($event)"><mat-icon  aria-hidden="false" >cancel</mat-icon></button>
+            </div>
+            <mat-form-field>
+                <label for="">email</label>
+                <P class="email">Users email</P>
+            </mat-form-field>
+            <mat-form-field>
+                <label for="Portfolio">Portfolio</label>
+                <input type="text" id="Portfolio">
+            </mat-form-field>
+            <mat-form-field>
+                <label for="tel">Phone Number</label>
+                <input type="text" id="tel">
+            </mat-form-field>
+            <!-- <mat-form-field>
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field> -->
+        </mat-card>
+    </form>
+   
+</section>

@@ -5,6 +5,7 @@ import { LocalstoreService } from 'src/app/services/localstore.service';
 import { MatchService } from 'src/app/services/match.service';
 import { CardComponent } from './card/card.component';
 import { FilterComponent } from '../filter/filter.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ export class HomeComponent implements OnInit {
     public matchservice:MatchService,
     private localstore: LocalstoreService,
     private fire:Firestore,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router:Router
     
   ){
     matchservice.emmitMatches.subscribe((data:any)=>{
@@ -55,7 +57,7 @@ export class HomeComponent implements OnInit {
   
    }
 
-  MakeMatch(e:any,object:object){
+  async makeMatch(e:any,object:object,disableButton:HTMLButtonElement){
     console.log(`this is object`,object);//In order to make a match request, we need to use the id
     // of the person we wish to match with and the id of the matcher as well. we store these two 
     // ids in an object as such {recipientId:'idValue', senderId:'idValue'}
@@ -72,7 +74,7 @@ export class HomeComponent implements OnInit {
       recipientId:object['id' as keyof object], //document Id of the user who recieves the match request provided by Firebase
       senderId:this.UserId.id, //Id of user making a match request. This Id is the email of the user.
     }
-    addDoc(this.dbref,requestObject);
+   await addDoc(this.dbref,requestObject);
     
   }
 
@@ -99,5 +101,9 @@ export class HomeComponent implements OnInit {
     thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/2.jpg',
     title: 'Example two with title.'
 }];
-
+   //code for user to setup account
+   setupAccount(e:any){
+    this.router.navigate(['/uoai/profile']);
+    
+  }
 }

@@ -43,7 +43,13 @@ import { MatInputModule } from '@angular/material/input';
 import{MatRadioModule} from '@angular/material/radio';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { PaypalComponent } from './components/paypal/paypal.component';
-
+import { RequestsidepullComponent } from './components/requestsidepull/requestsidepull.component';
+import { MatchrequestsComponent } from './components/matchrequests/matchrequests.component';
+import { WebsiteComponent } from './components/profileeditors/website/website.component';
+import { ServicesComponent } from './components/profileeditors/services/services.component';
+import { RelatedskillsComponent } from './components/profileeditors/relatedskills/relatedskills.component';
+import { EducationinfoComponent } from './components/profileeditors/educationinfo/educationinfo.component';
+import { ContactinfoComponent } from './components/profileeditors/contactinfo/contactinfo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +69,14 @@ import { PaypalComponent } from './components/paypal/paypal.component';
     NotificationsComponent,
     ContactComponent,
     KagertingComponent,
-    PaypalComponent
+    PaypalComponent,
+    RequestsidepullComponent,
+    MatchrequestsComponent,
+    WebsiteComponent,
+    ServicesComponent,
+    RelatedskillsComponent,
+    EducationinfoComponent,
+    ContactinfoComponent
   ],
   imports: [
     FormsModule,
@@ -74,6 +87,7 @@ import { PaypalComponent } from './components/paypal/paypal.component';
     provideFirestore(() => getFirestore()),
     BrowserAnimationsModule,
     MatSlideToggleModule,
+    MatFormFieldModule,
     MatButtonModule,
     MatCardModule,
     MatIconModule,
@@ -93,6 +107,7 @@ import { PaypalComponent } from './components/paypal/paypal.component';
     NgxPayPalModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[WebsiteComponent,ServicesComponent,ContactComponent]
 })
 export class AppModule { }

@@ -1,7 +1,18 @@
 <div class="nav">
-    <app-nav class="nav-class" [logincredits]="loginCredits" [breadCrumb]="getcrumb"></app-nav>
+    <app-nav
+     class="nav-class"
+      [logincredits]="loginCredits"
+      (showRequests)="gettherequests($event)"
+       [breadCrumb]="getcrumb">
+
+    </app-nav>
 </div>     
     
-<div>
+<main>
+    <section>
         <router-outlet></router-outlet>
-</div>    
+    </section>
+    <section class="request-side-pull" *ngIf="requests == false">
+        <app-requestsidepull></app-requestsidepull>
+    </section>
+</main>    

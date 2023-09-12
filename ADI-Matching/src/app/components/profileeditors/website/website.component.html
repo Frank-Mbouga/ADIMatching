@@ -1,0 +1,19 @@
+<section class="services">
+    <form action="#">
+        <mat-card>
+            <div class="mat-header-cross">
+                <mat-card-header>Add Website</mat-card-header>
+                <button color="disabled" (click)="cancel($event)"><mat-icon aria-hidden="true">cancel</mat-icon></button>
+            </div>
+            <mat-form-field>
+                <label for="URL">URL</label>
+                <input type="text" mat-input id="URL">
+            </mat-form-field>
+            <mat-form-field>
+                <label for="Description">Site Description</label>
+                <textarea name="site description" id="Description" ></textarea>
+            </mat-form-field>
+            <button (click)="add($event)"><mat-icon>add</mat-icon></button>
+        </mat-card>
+    </form>
+</section>
