@@ -1,132 +1,148 @@
-.profile-page{
+.profile-page {
     height: 100%;
     margin-top: 0.1%;
 }
-.profile-left{
+
+.profile-left {
     width: 25%;
     height: 250%;
     background-color: black;
     position: absolute;
-    
+
 }
-.profile-right{
+
+.profile-right {
     width: 75%;
     margin-left: 30%;
     position: absolute;
 }
 
-.about-div{
+.about-div {
     display: flex;
     flex-direction: column;
     height: 50%;
     overflow-y: scroll;
 }
 
-.complete-profile{
+.complete-profile {
     display: flex;
     flex-direction: column;
     height: 50%;
-    overflow-y: scroll;
+    overflow-y: none;
 
 }
 
-.profile-image{
+.profile-image {
     margin-top: 30%;
     margin-left: 20%;
     width: 70%;
 }
 
-img{
+img {
     border-radius: 50%;
     width: 200px;
     height: 200px;
 }
 
-.profile-header-button-div{
+.profile-header-button-div {
     margin-left: 30%;
     margin-top: 1%;
 }
 
-.profile-activity-div{
+.profile-activity-div {
     margin-left: 10%;
     margin-top: 10%;
 }
 
-.profile-header-activity-text{
+.profile-header-activity-text {
     margin-left: 25%;
     color: white;
 }
 
-.profile-stat-div{
+.profile-stat-div {
     margin-right: 5%;
     border-radius: 2vmax;
     background-color: lightcoral;
     text-align: left;
 }
 
-.profile-stat-text{
+.profile-stat-text {
     margin-left: 2.5%;
     color: white;
 }
 
-.about-header-text{
+.about-header-text {
     font-weight: bold;
 }
 
-.about-header-div{
+.about-header-div {
     margin-top: 5%;
 }
 
-.about-text-div{
+.about-text-div {
     flex-wrap: wrap;
     margin-top: 1.5%;
-    
+
 }
 
 
-.input-area{
+.input-area {
     height: 2.3vmax;
     width: 60%;
 }
 
-.complete-profile-header-div{
+.complete-profile-header-div {
     margin-top: 5%;
 }
 
-.complete-profile-text{
+.complete-profile-text {
     font-weight: bold;
 }
 
 
-.complete-profile-div{
+.complete-profile-div {
     flex-wrap: wrap;
     margin-top: 1.5%;
 }
 
-.validate-about{
+.validate-about {
     margin-top: 1%;
     margin-left: 54%;
 }
 
-.validate-complete-profile{
+.validate-complete-profile {
     margin-top: 1%;
     margin-left: 54%;
 }
 
-.upload-image{
+.upload-image {
     width: 70%;
 }
 
-.display-uploaded-images{
+.display-uploaded-images {
     background-color: red;
     border-radius: 0.2rem;
     width: 100%;
 }
 
-.dating-div{
+.dating-div {
     margin-top: 1%;
 }
 
-.dating-text{
-    
+mat-card {
+    margin-top: 3vmax;
+    width: 80%;
+    position: relative;
+}
+
+mat-card-header div.add-and-edit {
+    position: absolute;
+    left: 80%;
+    display: flex;
+    justify-content: space-around;
+    gap: 3vmax;
+}
+
+.mat-mini-fab.red {
+    background-color: red;
 }

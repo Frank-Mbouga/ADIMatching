@@ -3,6 +3,10 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { LocalstoreService } from 'src/app/services/localstore.service';
 import { MatchService } from 'src/app/services/match.service';
 import { UserService } from 'src/app/services/user.service';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatBadgeModule} from '@angular/material/badge';
+
 
 @Component({
   selector: 'app-nav',

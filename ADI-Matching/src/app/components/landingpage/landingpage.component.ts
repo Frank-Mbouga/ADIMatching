@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Firestore, collection, doc, getDocs, query, where } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 import { LocalstoreService } from 'src/app/services/localstore.service';
 import { MatchService } from 'src/app/services/match.service';
 
@@ -30,6 +31,7 @@ export class LandingpageComponent implements OnInit {
     private localstore: LocalstoreService,
     private matchservice: MatchService,
     private fire: Firestore,
+    private route:Router
 
   ) {
 
@@ -159,7 +161,6 @@ export class LandingpageComponent implements OnInit {
   }
   gettherequests(e:any){
     this.requests = e;
-    console.log('you cliked button');
-
+    this.route.navigate(['/uoai/matchrequests']);
   }
 }

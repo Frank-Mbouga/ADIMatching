@@ -1,0 +1,51 @@
+form{
+    width: 60%;
+    margin-left: 20%;
+}
+form mat-card{
+    padding: 10px 30px;
+    margin: 20% 0px;
+
+}
+button{
+    outline: none!important;
+    border: none!important;
+    background-color: transparent;
+}
+.mat-header-cross{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:3vmax;
+}
+.mat-header-cross mat-card-header{
+    font-size: 2vmax;
+}
+.mat-header-cross button{
+    mat-icon{
+        font-size: 50px;
+        height: 50px ;
+        width: 50px;
+    
+    }
+}
+mat-form-field{
+    label{
+        display: inline-block;
+    }
+    input#Service{
+        display: inline-block;
+        border: 1px solid rgba(0, 0, 0, 0.673);
+        outline: none;
+        width: 100%;
+        padding:1.5vmax 1.5vmax;
+        font-size: 1.5vmax;
+        margin-top: 1vmax;
+    }
+}
+
+section{
+    background-color: rgba(0, 0, 0, 0.288);
+    height: 100vh;
+    width: 100vw;
+}

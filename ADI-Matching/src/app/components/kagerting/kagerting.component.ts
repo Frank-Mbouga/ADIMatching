@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CardComponent } from '../home/card/card.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Dialog } from '@angular/cdk/dialog';
 import { ContentComponent } from '../content/content.component';
 import { NewsComponent } from '../news/news.component';
@@ -32,7 +32,10 @@ export class KagertingComponent {
  }
 
  openNews(){
-  const dialogRef = this.dialog.open(NewsComponent);
+  const dialogConfig = new MatDialogConfig();
+
+        dialogConfig.disableClose = true;
+  const dialogRef = this.dialog.open(NewsComponent,dialogConfig);
   dialogRef.afterClosed().subscribe((news_result: any) => { 
       console.log(`Dialog news_result: ${news_result}`);
    });

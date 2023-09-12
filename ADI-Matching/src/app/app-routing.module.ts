@@ -16,6 +16,12 @@ import { AuthenticationGuard } from './Guards/authentication.guard';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { KagertingComponent } from './components/kagerting/kagerting.component';
+import { MatchrequestsComponent } from './components/matchrequests/matchrequests.component';
+import { ServicesComponent } from './components/profileeditors/services/services.component';
+import { EducationinfoComponent } from './components/profileeditors/educationinfo/educationinfo.component';
+import { WebsiteComponent } from './components/profileeditors/website/website.component';
+import { ContactinfoComponent } from './components/profileeditors/contactinfo/contactinfo.component';
+import { RelatedskillsComponent } from './components/profileeditors/relatedskills/relatedskills.component';
 
 const routes: Routes = [
   { path: "", component: MainComponent },
@@ -24,19 +30,33 @@ const routes: Routes = [
   {
     path: "uoai",
     component: LandingpageComponent,
+    title:'ADI',
     canActivate:[AuthenticationGuard],
     children: [
       { path: "home", component: HomeComponent },
       { path: "events", component: EventsComponent },
       { path: "matches", component: MatchesComponent },
       { path: "chats", component: ChatsComponent },
-      { path: "profile", component: ProfileComponent },
+      { path: "profile", component: ProfileComponent, title:'ADI | Profile',
+          children:[
+    
+          ]
+    },
+
       { path: "settings", component: SettingsComponent },
       {path: "contact", component: ContactComponent},
       {path:'notifications', component:NotificationsComponent},
-      {path: "kagerting", component: KagertingComponent}
+      {path: "kagerting", component: KagertingComponent},
+      {path: "matchrequests", component: MatchrequestsComponent}
+
     ]
   },
+  {path:'uoai/profile/services',component:ServicesComponent},
+  {path:'uoai/profile/education',component:EducationinfoComponent},
+  {path:'uoai/profile/website',component:WebsiteComponent},
+  {path:'uoai/profile/contact',component:ContactinfoComponent},
+  {path:'uoai/profile/skills',component:RelatedskillsComponent},
+
   {path:"**",component:NotFoundComponent}
 ];
 
